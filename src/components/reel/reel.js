@@ -33,8 +33,8 @@ const Reel = (props) => {
 
     if (e.target.classList.contains("reel-next")) {
       newReelPos = getNextReelPos(reelPos);
-      reelAnimation(newReelPos, true);
       popInAnimation(newReelPos, true);
+      reelAnimation(newReelPos, true);
       for (let i = 0; i < display; i++) {
         reelPos[i] = newReelPos[i];
       }
@@ -51,17 +51,12 @@ const Reel = (props) => {
 
   async function reelAnimation(newReelPos, nextOrPrev) {
     if (nextOrPrev) {
-      reelItems[newReelPos[display - 1]].style.left =
-        reelItemWidth * display + "px";
-      // for (let i = 0; i < display - 1; i++) {
-      //   reelItems[newReelPos[i]].style.transform =
-      //     "translateX(" + reelItemWidth * i + "px)";
-      //   console.log(newReelPos[i]);
-      // }
-      // reelItems[newReelPos[display - 1]].style.transform =
-      //   "translateX(-" + reelItemWidth + "px)";
-      reelItems[newReelPos[0]].classList.toggle("reel-hide");
-      reelItems[newReelPos[0]].style.opacity = "0";
+      for (let i = 0; i < display - 1; i++) {
+        reelItems[newReelPos[i]].style.transform =
+          "translateX(" + reelItemWidth * i + "px)";
+      }
+      reelItems[reelPos[0]].classList.toggle("reel-hide");
+      reelItems[reelPos[0]].style.opacity = "0";
     } else if (!nextOrPrev) {
       for (var i = display - 1; i > -1; i--) {
         reelItems[newReelPos[i]].style.transform =
@@ -75,11 +70,11 @@ const Reel = (props) => {
   async function popInAnimation(newReelPos, nextOrPrev) {
     if (nextOrPrev) {
       reelItems[newReelPos[display - 1]].classList.toggle("reel-hide");
-      // await new Promise((r) => setTimeout(r, 30));
+      await new Promise((r) => setTimeout(r, 30));
       reelItems[newReelPos[display - 1]].style.opacity = "100";
     } else if (!nextOrPrev) {
       reelItems[newReelPos[0]].classList.toggle("reel-hide");
-      // await new Promise((r) => setTimeout(r, 30));
+      await new Promise((r) => setTimeout(r, 30));
       reelItems[newReelPos[0]].style.opacity = "100";
     }
   }
