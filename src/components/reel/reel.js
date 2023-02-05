@@ -1,110 +1,106 @@
 import React from "react";
-import { useState, useRef, useLayoutEffect, useEffect } from "react";
+import { useState, useRef, useLayoutEffect } from "react";
 import Next from "./reelNext.js";
 import Prev from "./reelPrev.js";
 import "./reel.scss";
 const Reel = (props) => {
   const reelContent = [];
   const reelPos = [];
-  const [reelItemWidth, setReelItemWidth] = useState(0);
-  const display = props.displayCount;
-  const reelDisplay = document.getElementsByClassName("reel-active");
+  const [reelState, setReelState] = useState(reelPos);
+  const [itemWidth, setItemWidth] = useState(0);
   const reelItems = document.getElementsByClassName("reel-card");
-  const maxReelPos = reelItems.length - 1;
-  const reelArray = Array.from(reelItems);
-  var reelDisplayArray = Array.from(reelDisplay);
+  const display = props.displayCount;
+  const reelSize = props.reelLength;
   const ref = useRef(null);
+
   for (let i = 0; i < display; i++) {
     reelPos[i] = i;
   }
   useLayoutEffect(() => {
-    setReelItemWidth(ref.current.offsetWidth);
+    setItemWidth(ref.current.offsetWidth);
   }, []);
-
-  window.addEventListener("load", (event) => {
-    setReelItemWidth(ref.current.offsetWidth);
-    for (var i = 0; i < display; i++) {
-      reelItems[i].style.transform = "translateX(" + reelItemWidth * i + "px)";
-    }
+  window.addEventListener("load", () => {
+    setReelTrack();
   });
+  function setReelTrack() {
+    for (let i = 0; i < display; i++) {
+      reelItems[reelState[i]].style.transform =
+        "translateX(" + itemWidth * i + "px";
+    }
+  }
 
   function updateReelPos(e) {
     var newReelPos;
-
-    if (e.target.classList.contains("reel-next")) {
-      newReelPos = getNextReelPos(reelPos);
-      popInAnimation(newReelPos, true);
-      reelAnimation(newReelPos, true);
+    try {
+      if (e.target.classList.contains("reel-next")) {
+        newReelPos = getNextReelPos();
+        reelAnimation(newReelPos, true);
+      } else if (e.target.classList.contains("reel-prev")) {
+        newReelPos = getPrevReelPos();
+        reelAnimation(newReelPos, false);
+      }
       for (let i = 0; i < display; i++) {
         reelPos[i] = newReelPos[i];
       }
-    } else if (e.target.classList.contains("reel-prev")) {
-      newReelPos = getPrevReelPos(reelPos);
-      reelAnimation(newReelPos, false);
-      popInAnimation(newReelPos, false);
-      for (let i = 0; i < display; i++) {
-        reelPos[i] = newReelPos[i];
-      }
-      console.log(reelPos);
-    }
+    } catch (e) {}
+    setReelState(reelPos);
+    console.log(reelState);
   }
-
-  async function reelAnimation(newReelPos, nextOrPrev) {
-    if (nextOrPrev) {
-      for (let i = 0; i < display - 1; i++) {
-        reelItems[newReelPos[i]].style.transform =
-          "translateX(" + reelItemWidth * i + "px)";
-      }
-      reelItems[reelPos[0]].classList.toggle("reel-hide");
-      reelItems[reelPos[0]].style.opacity = "0";
-    } else if (!nextOrPrev) {
-      for (var i = display - 1; i > -1; i--) {
-        reelItems[newReelPos[i]].style.transform =
-          "translateX(" + reelItemWidth * i + "px)";
-      }
-      reelItems[reelPos[display - 1]].classList.toggle("reel-hide");
-      reelItems[reelPos[display - 1]].style.opacity = "0";
-    }
-  }
-
-  async function popInAnimation(newReelPos, nextOrPrev) {
-    if (nextOrPrev) {
-      reelItems[newReelPos[display - 1]].classList.toggle("reel-hide");
-      await new Promise((r) => setTimeout(r, 30));
-      reelItems[newReelPos[display - 1]].style.opacity = "100";
-    } else if (!nextOrPrev) {
-      reelItems[newReelPos[0]].classList.toggle("reel-hide");
-      await new Promise((r) => setTimeout(r, 30));
-      reelItems[newReelPos[0]].style.opacity = "100";
-    }
-  }
-  function getNextReelPos(currentReelPos) {
-    var nextReelPos = Array.from(currentReelPos);
+  function getNextReelPos() {
+    var nextReelPos = reelState.slice();
     var overflow = 0;
-    for (var i = 0; i < display; i++) {
-      if (currentReelPos[i] + 1 > maxReelPos) {
+    for (let i = 0; i < display; i++) {
+      if (reelState[i] + 1 > reelSize - 1) {
         nextReelPos[i] = overflow++;
         continue;
       }
-      nextReelPos[i] = currentReelPos[i] + 1;
+      nextReelPos[i] = reelState[i] + 1;
     }
-
     return nextReelPos;
   }
-
-  function getPrevReelPos(currentReelPos) {
-    const nextReelPos = Array.from(currentReelPos);
-    var underflow = maxReelPos;
-    for (var i = 0; i < display; i++) {
-      if (reelPos[i] - 1 < 0) {
-        nextReelPos[i] = underflow;
+  function getPrevReelPos() {
+    var prevReelPos = reelState.slice();
+    var underflow = reelSize - 1;
+    for (let i = 0; i < display; i++) {
+      if (reelState[i] - 1 < 0) {
+        prevReelPos[i] = underflow;
         continue;
       }
-      nextReelPos[i] = currentReelPos[i] - 1;
+      prevReelPos[i] = reelState[i] - 1;
     }
-    return nextReelPos;
+    return prevReelPos;
   }
-
+  async function reelAnimation(newReelPos, nextOrPrev) {
+    if (nextOrPrev) {
+      for (let i = 0; i < display; i++) {
+        reelItems[newReelPos[i]].style.transform =
+          "translateX(" + itemWidth * i + "px";
+      }
+      reelItems[reelState[0]].classList.toggle("reel-hide");
+      reelItems[reelState[0]].style.opacity = "0";
+      setTimeout(
+        () => reelItems[newReelPos[display - 1]].classList.toggle("reel-hide"),
+        300
+      );
+      reelItems[newReelPos[display - 1]].style.opacity = "100";
+    } else if (!nextOrPrev) {
+      for (let i = display - 1; i > -1; i--) {
+        reelItems[newReelPos[i]].style.transform =
+          "translateX(" + itemWidth * i + "px";
+      }
+      reelItems[reelState[display - 1]].classList.toggle("reel-hide");
+      reelItems[reelState[display - 1]].style.opacity = "0";
+      setTimeout(
+        () => reelItems[newReelPos[0]].classList.toggle("reel-hide"),
+        300
+      );
+      reelItems[newReelPos[0]].style.opacity = "100";
+    }
+  }
+  window.onresize = () => {
+    setItemWidth(ref.current.offsetWidth);
+    setReelTrack();
+  };
   for (let i = 0; i < display; i++) {
     reelContent.push(
       <div ref={ref} className={"reel-card reel-active " + i}>
@@ -116,10 +112,9 @@ const Reel = (props) => {
       </div>
     );
   }
-
-  for (let i = display; i < props.reelLength; i++) {
+  for (let i = display; i < reelSize; i++) {
     reelContent.push(
-      <div className={"reel-card reel-hide " + i}>
+      <div ref={ref} className={"reel-card reel-hide " + i}>
         <img
           className="reel-img"
           src={"/Images/icons/" + props.srcs[i]}
@@ -128,11 +123,12 @@ const Reel = (props) => {
       </div>
     );
   }
-
   return (
     <div className="reel">
       <Prev updateReelPos={updateReelPos} />
-      <div className="reel-content">{reelContent}</div>
+      <div className="reel-container">
+        <div className="reel-content">{reelContent}</div>
+      </div>
       <Next updateReelPos={updateReelPos} />
     </div>
   );
