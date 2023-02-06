@@ -44,7 +44,6 @@ const Reel = (props) => {
       }
     } catch (e) {}
     setReelState(reelPos);
-    console.log(reelState);
   }
   function getNextReelPos() {
     var nextReelPos = reelState.slice();
@@ -103,7 +102,7 @@ const Reel = (props) => {
   };
   for (let i = 0; i < display; i++) {
     reelContent.push(
-      <div ref={ref} className={"reel-card reel-active " + i}>
+      <div ref={ref} className={"reel-card"}>
         <img
           className="reel-img"
           src={"/Images/icons/" + props.srcs[i]}
@@ -114,7 +113,7 @@ const Reel = (props) => {
   }
   for (let i = display; i < reelSize; i++) {
     reelContent.push(
-      <div ref={ref} className={"reel-card reel-hide " + i}>
+      <div ref={ref} className={"reel-card reel-hide"}>
         <img
           className="reel-img"
           src={"/Images/icons/" + props.srcs[i]}

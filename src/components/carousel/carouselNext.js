@@ -5,9 +5,7 @@ const carouselNext = ({ updateSlidePos }) => {
     <button
       onClick={(e) => updateSlidePos(e)}
       className="carousel-ctrl carousel-next"
-    >
-      &#62
-    </button>
+    ></button>
   );
 };
 
