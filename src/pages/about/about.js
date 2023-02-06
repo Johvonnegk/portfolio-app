@@ -1,6 +1,6 @@
 import React from "react";
 import "./about.scss";
-import Carousel from "../../components/carousel/Carousel";
+import Carousel from "../../components/carousel/carousel";
 const about = () => {
   const carouselImages = [
     "python-icon.png",
