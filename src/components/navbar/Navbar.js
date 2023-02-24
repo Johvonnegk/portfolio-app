@@ -5,19 +5,12 @@ const navbar = () => {
   const hamburger = document.getElementsByClassName("hamburger");
   const navMenu = document.getElementsByClassName("nav-menu");
 
-  // hamburger.addEventListener("click", (e) => {
-  // e.target.classList.toggle("active");
-  // navMenu.classList.toggle("active");
-  // });
-  // e.target.classList.toggle("active");
-
-  // document.querySelectorAll("nav-link").forEach((element) =>
-  //   element.addEventListener("click", () => {
-  //     hamburger.classList.remove("active");
-  //     navMenu.classList.remove("active");
-  //   })
-  // );
   function hamburgerClick(e) {
+    if (e.target.parentNode.classList.contains("navbar")) {
+      e.target.classList.toggle("active");
+      e.target.nextElementSibling.classList.toggle("active");
+      return;
+    }
     e.target.parentNode.classList.toggle("active");
     e.target.parentNode.nextElementSibling.classList.toggle("active");
   }

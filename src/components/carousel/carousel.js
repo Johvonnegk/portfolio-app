@@ -84,7 +84,7 @@ const Carousel = (props) => {
         src={"/portfolio-app/Images/projects/" + props.carouselInfo[0].src}
         alt=""
       />
-      <p className="carousel-item-desc">{props.carouselInfo[0].itemDesc}</p>
+      {props.carouselInfo[0].itemDesc}
     </div>
   );
   for (var i = 1; i < props.slideNum; i++) {
@@ -95,7 +95,7 @@ const Carousel = (props) => {
           src={"/portfolio-app/Images/projects/" + props.carouselInfo[i].src}
           alt=""
         />
-        <p className="carousel-item-desc">{props.carouselInfo[i].itemDesc}</p>
+        {props.carouselInfo[i].itemDesc}
       </div>
     );
   }

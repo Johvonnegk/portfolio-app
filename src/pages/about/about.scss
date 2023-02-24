@@ -4,7 +4,7 @@
     position: relative;
     width: 100%;
     height: 1200px;
-    padding-bottom: 100px;
+    padding-bottom: 10px;
     color: $primaryTextColor;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -18,7 +18,7 @@
 }
 
 .about-container .content p {
-    background-image: linear-gradient(-33deg, $primaryColor 50%, $secondaryColor 50%);
+    background-image: linear-gradient(-33deg, $tertiaryColor 50%, $secondaryColor 50%);
 }
 
 .about-container .content-1 {
