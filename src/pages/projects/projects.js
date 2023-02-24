@@ -8,10 +8,10 @@ const Projects = () => {
       itemDesc: (
         <p className="carousel-item-desc">
           <span>Course Management Web App </span> <hr /> In this project I
-          implemetned a course management system (cms for short), similar to
-          applications that schools currently use that allows students,
-          instructors, and as well as administrators to manage and view course
-          information but with a more modern look. <br />
+          implemetned a course management system (cms for short). It functions
+          similarly to applications that schools currently use, that allows
+          students, instructors, as well as administrators to manage and view
+          course information with a modern look. <br />
           <br /> The planning phase of this project included the use of various
           UML diagram models as well as many software architecture techniques.{" "}
           <br /> <br />

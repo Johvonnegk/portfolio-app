@@ -25,13 +25,13 @@ const about = () => {
             Hi my name is Johvonne Keane and I am a third year software
             engineering student at Ontario Tech University. I love coding,
             problem solving, and I am always looking for new challenges and ways
-            to widen my skill set. I am a full stack developer, and I love
+            to broaden my skill set. I am a full stack developer, and I love
             learning new frameworks as the tools for web developent continue to
             grow. Other than coding in my freetime I like to play piano, edit
             create/videos, and exercise. <br />
             Below are a few programming tools such as programming langauges,
             scripting languges, operating systems, and frameworks that I am very
-            comfortable to use for developent.
+            comfortable to use for development.
           </p>
         </div>
         <h2 className="header-2">My Skill Set</h2>
