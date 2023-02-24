@@ -13,14 +13,12 @@ const Carousel = (props) => {
 
   useLayoutEffect(() => {
     setSlideWidth(ref.current.offsetWidth);
-    Array.from(slides).forEach(setSlideTrack);
   }, []);
 
-  const setSlideTrack = (slide, index) => {
+  function setSlideTrack(slide, index) {
     slide.style.left = slideWidth * index + "px";
-  };
+  }
   Array.from(slides).forEach(setSlideTrack);
-
   function updateSlidePos(e, nextSlidePos = slidePos) {
     try {
       if (e.target.classList.contains("carousel-next")) {
@@ -37,8 +35,6 @@ const Carousel = (props) => {
     slides[slidePos].classList.toggle("carousel-active");
     slides[nextSlidePos].classList.toggle("carousel-active");
     setSlidePos(nextSlidePos);
-
-    console.log(slidePos);
   }
 
   function getNextSlide() {
@@ -81,11 +77,11 @@ const Carousel = (props) => {
       </div>
     );
   }
-  var resizeCarousel;
+
   window.onresize = () => {
     setSlideWidth(ref.current.offsetWidth);
     Array.from(slides).forEach(setSlideTrack);
-    resizeCarousel = setTimeout(updateSlidePos, 100);
+    setTimeout(updateSlidePos, 100);
   };
 
   return (
