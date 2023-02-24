@@ -1,0 +1,47 @@
+@import "../../components/colors.scss";
+
+.welcome-container {
+    width: 100%;
+    height: 1000px;
+    background-image: url('../../../public/Images/backgound images/mycode1.png');
+    background-size: cover;
+    position: relative;
+    color: $primaryTextColor;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "header header header"
+        "content-1 content-1 content-1"
+    ;
+}
+
+.welcome-container::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    left: 0px;
+    background-color: rgba(0, 0, 0, 0.35);
+    backdrop-filter: blur(5px);
+}
+
+.sectional-header {
+    position: relative;
+    place-self: center;
+    grid-area: header;
+    justify-self: center;
+    align-self: center;
+    text-align: center;
+}
+
+.welcome-container .content p {
+    background-image: linear-gradient(33deg, $secondaryColor 50%, $primaryColor 50%);
+}
+
+.welcome-container .content-1 {
+    position: relative;
+    grid-area: content-1;
+    width: 70%;
+    justify-self: center;
+}

@@ -1,0 +1,85 @@
+@import "../colors.scss";
+
+.carousel {
+  color: $primaryTextColor;
+  height: 550px;
+  width: 50%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-img {
+  height: 300px;
+  object-fit: fit;
+  border-radius: 8px;
+}
+
+.carousel-content {
+  // background-color: lightgreen;
+  overflow: hidden;
+  padding: 10px;
+  height: 33em;
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, .2);
+}
+
+.carousel-card {
+  background-color: rgba(17, 0, 99, 0.167);
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  transition: transform 400ms ease-in-out;
+}
+
+
+.carousel-item-desc {
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: 0;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.carousel-item-desc p span {
+  display: block;
+  font-size: 1.2em;
+  text-decoration: underline;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 8px;
+}
+
+.carousel-ctrl {
+  border: solid black;
+  border-width: 0 0.3em 0.3em 0;
+  display: inline-block;
+  padding: 4%;
+  background-color: transparent;
+}
+
+.carousel-ctrl:hover {
+  border: solid white;
+  border-width: 0 0.3em 0.3em 0;
+  display: inline-block;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+}
+
+.carousel-next {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.carousel-prev {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
