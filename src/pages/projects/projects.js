@@ -7,7 +7,7 @@ const Projects = () => {
       src: "CMS project.png",
       itemDesc: (
         <p className="carousel-item-desc">
-          <span>Course Management Web App </span> <hr /> In this project I
+          <span>Course Management Web App </span> <hr /> In this project, I
           implemetned a course management system (cms for short). It functions
           similarly to applications that schools currently use, that allows
           students, instructors, as well as administrators to manage and view
