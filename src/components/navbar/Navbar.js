@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import "./Navbar.scss";
 const navbar = () => {
@@ -56,3 +57,29 @@ const navbar = () => {
 };
 
 export default navbar;
+=======
+import React from "react";
+import "./Navbar.scss";
+const navbar = () => {
+  return (
+    <div className="navbar">
+      <ul>
+        <li>
+          <a href="#welcome">Welcome</a>
+        </li>
+        <li>
+          <a href="#about">About Me</a>
+        </li>
+        <li>
+          <a href="#projects">My Projects</a>
+        </li>
+        <li>
+          <a href="#contact">Contact Me</a>
+        </li>
+      </ul>
+    </div>
+  );
+};
+
+export default navbar;
+>>>>>>> d485e69893845c09c4049f949f6a40dacae63e8f

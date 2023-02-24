@@ -1,15 +1,19 @@
 @import "./components/colors.scss";
+<<<<<<< HEAD
 
 html {
     scroll-behavior: smooth;
 }
 
+=======
+>>>>>>> d485e69893845c09c4049f949f6a40dacae63e8f
 body {
     font-family: 'Lato', sans-serif;
     padding: 0;
     margin: 0;
     background-color: $primaryColor;
 }
+<<<<<<< HEAD
 
 #welcome,
 #about,
@@ -19,10 +23,18 @@ body {
 }
 
 h1 {
+=======
+#welcome, #about {
+    padding: 0;
+    margin: 0;
+}
+h1{
+>>>>>>> d485e69893845c09c4049f949f6a40dacae63e8f
     font-size: 40px;
     margin: 0;
     padding: 0;
 }
+<<<<<<< HEAD
 
 h2 {
     font-size: 30px;
@@ -159,4 +171,10 @@ h2 {
             }
         }
     }
+=======
+h2{
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+>>>>>>> d485e69893845c09c4049f949f6a40dacae63e8f
 }

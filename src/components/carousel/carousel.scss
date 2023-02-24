@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 @import "../colors.scss";
 
 .carousel {
@@ -82,4 +83,64 @@
 .carousel-prev {
   transform: rotate(135deg);
   -webkit-transform: rotate(135deg);
+=======
+.carousel {
+  position: relative;
+  height: 300px;
+  width: 15%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.carousel-content {
+  // background-color: lightgreen;
+  overflow: hidden;
+  padding: 10px;
+  height: 100%;
+  position: relative;
+  width: 100%;
+}
+
+.carousel-card {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  transition: transform 400ms ease-in-out;
+}
+
+.carousel-ctrl {
+  border: solid black;
+  border-width: 0 0.3em 0.3em 0;
+  display: inline-block;
+  padding: 6%;
+  background-color: transparent;
+}
+
+.carousel-ctrl:hover {
+  border: solid white;
+  border-width: 0 0.3em 0.3em 0;
+  display: inline-block;
+  padding: 6%;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+}
+
+.carousel-next {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.carousel-prev {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+>>>>>>> d485e69893845c09c4049f949f6a40dacae63e8f
 }
