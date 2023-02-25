@@ -28,7 +28,7 @@ const about = () => {
             to broaden my skill set. I am a full stack developer, and I love
             learning new frameworks as the tools for web developent continue to
             grow. Other than coding in my freetime I like to play piano, edit
-            create/videos, and exercise. <br />
+            create/videos, and exercise. <br /> <br />
             Below are a few programming tools such as programming langauges,
             scripting languges, operating systems, and frameworks that I am very
             comfortable to use for development.

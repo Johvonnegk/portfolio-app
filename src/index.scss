@@ -114,7 +114,6 @@ h2 {
 
 
             @media only screen and (max-width: 600px) {
-
                 .about-container {
                     grid-template-rows: 100px 400px 30px;
                     height: 850px;
@@ -150,6 +149,7 @@ h2 {
 
                 @media only screen and (max-width: 450px) {
                     .about-container {
+                        padding-top: 80px;
                         grid-template-rows: 1fr 1fr 1fr 250px;
                     }
 
