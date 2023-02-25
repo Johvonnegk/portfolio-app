@@ -61,7 +61,7 @@
 }
 
 .reel-ctrl {
-  border: solid black;
+  border: solid white;
   border-width: 0 0.3em 0.3em 0;
   display: inline-block;
   padding: 2%;
@@ -69,7 +69,7 @@
 }
 
 .reel-ctrl:hover {
-  border: solid white;
+  border: solid $tertiaryColor;
   border-width: 0 0.3em 0.3em 0;
   display: inline-block;
   padding: 2%;
