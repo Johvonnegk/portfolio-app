@@ -62,6 +62,10 @@ h2 {
     color: $hoverColor;
 }
 
+.mobile-break {
+    display: none;
+}
+
 @media only screen and (max-width: 1400px) {
 
     .carousel {
@@ -90,6 +94,10 @@ h2 {
             object-fit: fit;
         }
 
+        .mobile-break {
+            display: block;
+        }
+
         @media only screen and (max-width: 800px) {
             .about-container {
                 grid-template-rows: 0.2fr 1fr 0.1fr 1fr;
@@ -112,6 +120,17 @@ h2 {
                 width: 30px;
             }
 
+            @media only screen and (max-width: 700px) {
+                .about-container .content-1 p {
+                    font-size: 17px;
+                }
+
+                .about-container {
+                    grid-template-rows: 100px 450px 30px;
+                    height: 950px;
+                }
+
+            }
 
             @media only screen and (max-width: 600px) {
                 .about-container {
@@ -124,9 +143,6 @@ h2 {
                     height: 950px;
                 }
 
-                .about-container .content-1 p {
-                    font-size: 18px;
-                }
 
                 .about-container .header-2 {
                     grid-area: content-2;

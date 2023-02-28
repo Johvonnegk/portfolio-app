@@ -22,16 +22,17 @@ const about = () => {
         <h2 className="header-1">About Me</h2>
         <div className="content content-1">
           <p>
-            Hi my name is Johvonne Keane and I am a third year software
-            engineering student at Ontario Tech University. I love coding,
-            problem solving, and I am always looking for new challenges and ways
-            to broaden my skill set. I am a full stack developer, and I love
-            learning new frameworks as the tools for web developent continue to
-            grow. Other than coding in my freetime I like to play piano, edit
-            create/videos, and exercise. <br /> <br />
-            Below are a few programming tools such as programming langauges,
-            scripting languges, operating systems, and frameworks that I am very
-            comfortable to use for development.
+            Hi, my name is Johvonne Keane and I am a third-year software
+            engineering student at Ontario Tech University. I love coding and
+            problem-solving and am always seeking new challenges and ways to
+            broaden my skill set. <br className="mobile-break" />
+            <br className="mobile-break" />I am a full-stack developer, and I
+            love learning new frameworks as the tools for web development
+            continue to grow. Besides coding, in my free-time I like to play
+            piano, edit and create/videos, and exercise. <br /> <br />
+            Below are a few programming tools such as programming languages,
+            scripting languages, operating systems, and frameworks that I am
+            very comfortable using for development.
           </p>
         </div>
         <h2 className="header-2">My Skill Set</h2>

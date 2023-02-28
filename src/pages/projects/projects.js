@@ -8,8 +8,8 @@ const Projects = () => {
       itemDesc: (
         <p className="carousel-item-desc">
           <span>Course Management Web App </span> <hr /> In this project, I
-          implemetned a course management system (cms for short). It functions
-          similarly to applications that schools currently use, that allows
+          implemented a course management system (cms for short). It functions
+          similarly to applications that schools currently use, which allows
           students, instructors, as well as administrators to manage and view
           course information with a modern look. <br />
           <br /> The planning phase of this project included the use of various
@@ -27,10 +27,9 @@ const Projects = () => {
         <p className="carousel-item-desc">
           <span> Car Rental App </span> <hr />
           This project was an implementation of a car rental-service web
-          application, similar to websites like Enterprise. However this site
-          and Enterprise are different as this site allows other users other
-          than the company itself to post their own vehicles to the site for
-          renting.
+          application, similar to websites like Enterprise. However, this site
+          differs from Enterprise as it allows other users besides those from
+          the company itself to post their own vehicles to the site for renting.
           <br /> <br />
           Languages and Frameworks Used: Javascript, React.js, Node.js, SCSS,
           HTML, Axios API, and MongoDB
