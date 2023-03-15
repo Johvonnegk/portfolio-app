@@ -1,0 +1,208 @@
+@import "./components/colors.scss";
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lato', sans-serif;
+    padding: 0;
+    margin: 0;
+    background-color: $primaryColor;
+
+
+}
+
+body::-webkit-scrollbar {
+    width: 2px;
+}
+
+body::-webkit-scrollbar {
+    background: $primaryColor;
+    border-radius: 8px;
+}
+
+body::-webkit-scrollbar-thumb {
+    background: rgb(255, 255, 255);
+    border-radius: 8px;
+}
+
+#welcome,
+#about,
+#projects {
+    padding: 0;
+    margin: 0;
+}
+
+h1 {
+    font-size: 40px;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    font-size: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+.content p {
+    box-shadow: 10px 10px 10px rgba(0, 0, 0, .2);
+    border-radius: 8px;
+    font-size: 20px;
+    padding: 20px;
+    text-align: center;
+}
+
+.content p a {
+    color: inherit;
+}
+
+.content p a:hover {
+    color: $hoverColor;
+}
+
+.mobile-break {
+    display: none;
+}
+
+@media only screen and (max-width: 1400px) {
+
+    .carousel {
+        width: 55%;
+    }
+
+    @media only screen and (max-width: 1050px) {
+        .about-container {
+            grid-template-rows: 0.3fr 1fr 0.1fr 1fr;
+        }
+
+        .reel-item-desc {
+            font-size: 20px;
+        }
+
+        .reel {
+            width: 70%;
+        }
+
+        .carousel {
+            width: 80%;
+        }
+
+        .carousel-img {
+            height: 300px;
+            object-fit: fit;
+        }
+
+        .mobile-break {
+            display: block;
+        }
+
+        @media only screen and (max-width: 800px) {
+            .about-container {
+                grid-template-rows: 0.2fr 1fr 0.1fr 1fr;
+            }
+
+            .carousel-item-desc {
+                font-size: 16px;
+            }
+
+            .carousel-item-desc span {
+                font-size: 20px;
+            }
+
+            .contact-menu {
+                height: 50px;
+            }
+
+            .contact-menu-item a svg {
+                height: 30px;
+                width: 30px;
+            }
+
+            @media only screen and (max-width: 700px) {
+                .about-container .content-1 p {
+                    font-size: 17px;
+                }
+
+                .about-container {
+                    grid-template-rows: 100px 450px 30px;
+                    height: 950px;
+                }
+
+            }
+
+            @media only screen and (max-width: 600px) {
+                .about-container {
+                    grid-template-rows: 100px 400px 30px;
+                    height: 850px;
+                }
+
+                .projects-container {
+                    padding-top: 50px;
+                    height: 950px;
+                }
+
+
+                .about-container .header-2 {
+                    grid-area: content-2;
+                    justify-self: center;
+
+                }
+
+                .about-container .content-2 {
+                    align-self: start;
+                    grid-area: content-2;
+                }
+
+                .reel-item-desc {
+                    display: none;
+                }
+
+                .carousel {
+                    width: 90%;
+                }
+
+                @media only screen and (max-width: 450px) {
+                    .about-container {
+                        padding-top: 80px;
+                        grid-template-rows: 1fr 1fr 1fr 250px;
+                    }
+
+                    .carousel-img {
+                        object-fit: contain;
+                    }
+
+                    .carousel-item-desc {
+                        font-size: 15px;
+                    }
+
+                    .carousel-item-desc span {
+                        font-size: 18px;
+                    }
+
+                    .contact-menu {
+                        height: 40px;
+                    }
+
+                    .contact-menu-item a svg {
+                        height: 20px;
+                        width: 20px;
+                    }
+
+                    @media only screen and (max-width: 300px) {
+
+                        .carousel-item-desc {
+                            font-size: 12px;
+                        }
+
+                        .carousel-item-desc span {
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

@@ -1,0 +1,14 @@
+@import "../../components/colors.scss";
+
+.projects-container {
+    height: 1200px;
+    display: grid;
+    padding-top: 50px;
+    grid-template-rows: 100px;
+    justify-items: center;
+}
+
+.projects-container h2 {
+    place-self: center;
+    color: $primaryTextColor;
+}

@@ -1,0 +1,107 @@
+@import "../colors.scss";
+
+.carousel {
+  color: $primaryTextColor;
+  height: 550px;
+  width: 50%;
+  margin: 10px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-img {
+  border-radius: 8px;
+  width: 100%;
+  height: auto;
+  object-fit: fit;
+}
+
+.carousel-content {
+  background-color: $tertiaryColor;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  height: 100%;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 10px 10px rgba(0, 0, 0, .2);
+}
+
+.carousel-card {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  transition: transform 400ms ease-in-out;
+}
+
+.carousel-content::-webkit-scrollbar {
+  width: 0px;
+}
+
+.carousel-content::-webkit-scrollbar {
+  background: rgba(17, 0, 99, 0.2);
+  border-radius: 8px;
+}
+
+.carousel-content::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.256);
+  border-radius: 8px;
+}
+
+.carousel-item-desc {
+  border-radius: 8px;
+  align-self: center;
+  width: 90%;
+  height: 100%;
+  margin: 0;
+  padding-bottom: 30px;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.carousel-item-desc span {
+  display: block;
+  font-size: 1.3em;
+  margin: 0;
+  padding: 0;
+  margin-top: 10px;
+
+}
+
+.carousel-item-desc hr {
+  margin-bottom: 25px;
+}
+
+.carousel-ctrl {
+  border: solid white;
+  border-width: 0 0.3em 0.3em 0;
+  display: inline-block;
+  padding: 4%;
+  background-color: transparent;
+}
+
+.carousel-ctrl:hover {
+  border: solid $tertiaryColor;
+  border-width: 0 0.3em 0.3em 0;
+  display: inline-block;
+  transition: all 250ms ease-in-out;
+  cursor: pointer;
+}
+
+.carousel-next {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.carousel-prev {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
