@@ -81,7 +81,7 @@ const Carousel = (props) => {
     <div ref={ref} className="carousel-card carousel-active">
       <img
         className="carousel-img"
-        src={"/portfolio-app/Images/projects/" + props.carouselInfo[0].src}
+        src={"/Images/projects/" + props.carouselInfo[0].src}
         alt=""
       />
       {props.carouselInfo[0].itemDesc}
@@ -92,7 +92,7 @@ const Carousel = (props) => {
       <div ref={ref} className="carousel-card">
         <img
           className="carousel-img"
-          src={"/portfolio-app/Images/projects/" + props.carouselInfo[i].src}
+          src={"/Images/projects/" + props.carouselInfo[i].src}
           alt=""
         />
         {props.carouselInfo[i].itemDesc}

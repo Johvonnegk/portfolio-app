@@ -135,7 +135,7 @@ const Reel = (props) => {
       <div key={props.reelInfo[i].id} ref={ref} className={"reel-card"}>
         <img
           className="reel-img"
-          src={"/portfolio-app/Images/icons/" + props.reelInfo[i].src}
+          src={"/Images/icons/" + props.reelInfo[i].src}
           alt=""
         />
         <p className="reel-item-desc">{props.reelInfo[i].itemDesc}</p>
@@ -151,7 +151,7 @@ const Reel = (props) => {
       >
         <img
           className="reel-img"
-          src={"/portfolio-app/Images/icons/" + props.reelInfo[i].src}
+          src={"/Images/icons/" + props.reelInfo[i].src}
           alt=""
         />
         <p className="reel-item-desc">{props.reelInfo[i].itemDesc}</p>
